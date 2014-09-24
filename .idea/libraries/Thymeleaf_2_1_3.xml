@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="Thymeleaf-2.1.3" type="thymeleaf">
+    <properties version="2.1.3" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/unbescape-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ognl-3.0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist-3.16.1-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/thymeleaf-spring4-2.1.3.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/thymeleaf-2.1.3.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/thymeleaf-spring4-2.1.3.RELEASE-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/thymeleaf-2.1.3.RELEASE-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/thymeleaf-spring4-2.1.3.RELEASE-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/thymeleaf-2.1.3.RELEASE-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
