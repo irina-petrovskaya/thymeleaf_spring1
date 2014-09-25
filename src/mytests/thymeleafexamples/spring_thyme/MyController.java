@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class MyController {
-    @ModelAttribute("str1_attr")
+    @ModelAttribute("common_str1_attr")
     public String str1(){
         return "my string 1";
     }
