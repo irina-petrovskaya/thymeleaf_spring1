@@ -6,5 +6,7 @@
 </head>
 <body>
     <p th:text="'*'+${'__'+common_str1_attr+'__'}+'*'"></p>
+     <p th:text="#{mess1}"></p>
+     <p th:text="#{mess2(${#dates.createToday()})}"></p>
 </body>
 </html>

@@ -15,7 +15,7 @@ public class MyController {
     public String str1(){
         return "my string 1";
     }
-    @RequestMapping("/test1")
+    @RequestMapping({"/test1"})
     public String test1Mapping(){
         return "test1_page";
     }
