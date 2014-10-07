@@ -70,7 +70,9 @@
         <property name="defaultThemeName" value="default" />
     </bean>
 
-
+    <mvc:interceptors>
+        <ref bean="themeChangeInterceptor"/>
+    </mvc:interceptors>
     <bean id="handlerMapping"
         class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="interceptors">
