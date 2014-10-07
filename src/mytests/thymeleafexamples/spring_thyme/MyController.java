@@ -12,11 +12,11 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class MyController {
-    @ModelAttribute("str1_attr")
+    @ModelAttribute("common_str1_attr")
     public String str1(){
         return "my string 1";
     }
-    @RequestMapping("/test1")
+    @RequestMapping({"/test1"})
     public String test1Mapping(){
         return "test1_page";
     }
