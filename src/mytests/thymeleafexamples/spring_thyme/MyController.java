@@ -4,7 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by irina on 9/24/2014.
@@ -20,8 +21,9 @@ public class MyController {
         return "test1_page";
     }
     @RequestMapping("/test2")
-    public String test2Mapping(ModelMap model){
-        model.addAttribute("test2_model_attr1","test2_attr1");
+    public String test2Mapping(ModelMap model, HttpSession session){
+        session.setAttribute("mysessionattribute1","mysessionattr_value");
+        model.addAttribute("test2_model_attr1", "test2_attr1");
         return "test2_page";
     }
 }
