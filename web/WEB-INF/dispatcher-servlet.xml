@@ -41,8 +41,8 @@
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
             <property name="basenames">
                 <list>
-                    <value>Messages</value>
-                    <value>MyMessages</value>
+                    <value>Messages_en</value>
+                    <value>MyMessages_en</value>
                 </list>
             </property>
         </bean>
