@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <bean id="templateResolver"
           class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/" />
-        <property name="suffix" value=".html" />
-        <property name="templateMode" value="HTML5" />
+        <property name="prefix" value="/WEB-INF/templates/"/>
+        <property name="suffix" value=".html"/>
+        <property name="templateMode" value="HTML5"/>
     </bean>
 
     <bean id="templateEngine"
           class="org.thymeleaf.spring4.SpringTemplateEngine">
-        <property name="templateResolver" ref="templateResolver" />
+        <property name="templateResolver" ref="templateResolver"/>
     </bean>
 
     <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
-        <property name="templateEngine" ref="templateEngine" />
+        <property name="templateEngine" ref="templateEngine"/>
     </bean>
 
 
-    <mvc:resources location="/themes/" mapping="/themes/**" />
+    <mvc:resources location="/themes/" mapping="/themes/**"/>
 
 
     <!-- **************************************************************** -->
@@ -28,24 +29,31 @@
     <!-- **************************************************************** -->
     <!--<mvc:annotation-driven conversion-service="conversionService" />-->
     <mvc:annotation-driven/>
-    <context:component-scan base-package="mytests.thymeleafexamples.spring_thyme" />
+    <context:component-scan base-package="mytests.thymeleafexamples.spring_thyme"/>
 
 
     <!-- **************************************************************** -->
     <!--  MESSAGE EXTERNALIZATION/INTERNATIONALIZATION                    -->
     <!--  Standard Spring MessageSource implementation                    -->
     <!-- **************************************************************** -->
-    <!--<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-        <property name="basename" value="Messages" />
-    </bean>-->
+    <!--
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>Messages</value>
+                <value>MyMessages</value>
+            </list>
+        </property>
+    </bean>
+    -->
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-            <property name="basenames">
-                <list>
-                    <value>Messages_en</value>
-                    <value>MyMessages_en</value>
-                </list>
-            </property>
-        </bean>
+        <property name="basenames">
+            <list>
+                <value>classpath:Messages</value>
+                <value>classpath:MyMessages</value>
+            </list>
+        </property>
+    </bean>
 
     <!-- **************************************************************** -->
     <!--  CONVERSION SERVICE                                              -->
@@ -63,28 +71,28 @@
 
     <!--- Themes -->
     <bean id="themeSource"
-        class="org.springframework.ui.context.support.ResourceBundleThemeSource">
-            <property name="basenamePrefix" value="theme-" />
+          class="org.springframework.ui.context.support.ResourceBundleThemeSource">
+        <property name="basenamePrefix" value="theme-"/>
     </bean>
 
     <!-- Theme Change Interceptor and Resolver definition -->
     <bean id="themeChangeInterceptor"
-        class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
-        <property name="paramName" value="theme" />
+          class="org.springframework.web.servlet.theme.ThemeChangeInterceptor">
+        <property name="paramName" value="theme"/>
     </bean>
     <bean id="themeResolver"
-        class="org.springframework.web.servlet.theme.CookieThemeResolver">
-        <property name="defaultThemeName" value="default" />
+          class="org.springframework.web.servlet.theme.CookieThemeResolver">
+        <property name="defaultThemeName" value="default"/>
     </bean>
 
     <mvc:interceptors>
         <ref bean="themeChangeInterceptor"/>
     </mvc:interceptors>
     <bean id="handlerMapping"
-        class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+          class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="interceptors">
             <list>
-                <ref bean="themeChangeInterceptor" />
+                <ref bean="themeChangeInterceptor"/>
             </list>
         </property>
     </bean>
