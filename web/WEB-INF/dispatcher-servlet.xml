@@ -35,10 +35,17 @@
     <!--  MESSAGE EXTERNALIZATION/INTERNATIONALIZATION                    -->
     <!--  Standard Spring MessageSource implementation                    -->
     <!-- **************************************************************** -->
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+    <!--<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="Messages" />
-    </bean>
-
+    </bean>-->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+            <property name="basenames">
+                <list>
+                    <value>Messages</value>
+                    <value>MyMessages</value>
+                </list>
+            </property>
+        </bean>
 
     <!-- **************************************************************** -->
     <!--  CONVERSION SERVICE                                              -->
@@ -77,7 +84,6 @@
         class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="interceptors">
             <list>
-
                 <ref bean="themeChangeInterceptor" />
             </list>
         </property>
