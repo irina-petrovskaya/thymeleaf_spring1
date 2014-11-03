@@ -1,11 +1,12 @@
 package mytests.thymeleafexamples.spring_thyme;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
  * by Irina.Petrovskaya on 11/3/2014.
  */
-@Component
+
 public class Person {
     public Person(String address, int age, String name) {
         this.address = address;
