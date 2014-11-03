@@ -14,6 +14,9 @@ public class Person {
         this.name = name;
     }
 
+    public Person() {
+    }
+
     String name;
     int age;
     String address;
