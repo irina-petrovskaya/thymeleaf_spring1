@@ -13,8 +13,8 @@
     <p>application context attributes: </p>
         <table border="1">
         <tr th:each="ctx_attr : ${application.keySet()}" >
-                <td th:text="${ctx_attr}">javax.servlet.context.tempdir</td>
-                <td th:text="${application.get(ctx_attr)}">/tmp</td>
+                <td th:text="${ctx_attr}"></td>
+                <td th:text="${application.get(ctx_attr)}"></td>
             </tr>
         </table>
 </body>
