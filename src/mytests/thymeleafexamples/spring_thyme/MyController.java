@@ -4,14 +4,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by irina on 9/24/2014.
  */
 @Controller
 public class MyController {
+
+    private List<Person> personList = new ArrayList<Person>();
+
     @ModelAttribute("common_str1_attr")
     public String str1(){
         return "my string 1";
@@ -25,5 +31,20 @@ public class MyController {
         session.setAttribute("mysessionattribute1","mysessionattr_value");
         model.addAttribute("test2_model_attr1", "test2_attr1");
         return "test2_page";
+    }
+
+    @RequestMapping(value = "/test3")
+    public String test4Mapping(@ModelAttribute Person person){
+     personList.add(person);
+     return "test3_page";
+    }
+    @RequestMapping("/test4")
+    public ModelAndView test3Mapping(){
+        ModelAndView mav = new ModelAndView("test4_page");
+        personList.add(new Person("irina", 44, "SPb"));
+        personList.add(new Person("vera", 18, "SPb"));
+        personList.add(new Person("andrey", 44, "SPb"));
+        mav.addObject("persons", personList);
+        return mav;
     }
 }
