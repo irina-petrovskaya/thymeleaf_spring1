@@ -8,5 +8,14 @@
     <p th:text="'*'+${'__'+common_str1_attr+'__'}+'*'"></p>
      <p th:text="#{mess1}"></p>
      <p th:text="#{mess2(${#dates.createToday()})}"></p>
+    <p>params test:</p>
+    <p th:text="${param.size()}"></p>
+    <p>application context attributes: </p>
+        <table border="1">
+        <tr th:each="ctx_attr : ${application.keySet()}" >
+                <td th:text="${ctx_attr}">javax.servlet.context.tempdir</td>
+                <td th:text="${application.get(ctx_attr)}">/tmp</td>
+            </tr>
+        </table>
 </body>
 </html>
