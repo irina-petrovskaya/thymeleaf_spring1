@@ -5,9 +5,11 @@
     <title>test1</title>
 </head>
 <body>
-    <p th:text="'*'+${'__'+common_str1_attr+'__'}+'*'"></p>
+    <p th:text="'*'+${'__'+common_str1_attr1+'__'}+'*'"></p>
      <p th:text="#{mess1}"></p>
      <p th:text="#{mess2(${#dates.createToday()})}"></p>
+     <p th:text="${#vars.common_str1_attr1}"></p>
+     <p th:text="${#ctx.variables.common_str1_attr1}"></p>
     <p>params test:</p>
     <p th:text="${param.size()}"></p>
     <p>application context attributes: </p>
