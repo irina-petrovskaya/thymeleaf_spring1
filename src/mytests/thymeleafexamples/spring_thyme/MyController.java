@@ -2,6 +2,7 @@ package mytests.thymeleafexamples.spring_thyme;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,7 +35,7 @@ public class MyController {
     }
 
     @RequestMapping(value = "/test3")
-    public String test4Mapping(@ModelAttribute Person person){
+    public String test4Mapping( Person person, BindingResult bindingResult){
      personList.add(person);
      return "test3_page";
     }
