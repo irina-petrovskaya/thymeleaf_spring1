@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>test3</title>
+</head>
+<body>
+<table border="1">
+    <tr th:each="p:${persons}">
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.age}"></td>
+        <td th:text="${p.address}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

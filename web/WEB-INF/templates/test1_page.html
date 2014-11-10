@@ -10,5 +10,14 @@
      <p th:text="#{mess2(${#dates.createToday()})}"></p>
      <p th:text="${#vars.common_str1_attr}"></p>
      <p th:text="${#ctx.variables.common_str1_attr}"></p>
+    <p>params test:</p>
+    <p th:text="${param.size()}"></p>
+    <p>application context attributes: </p>
+        <table border="1">
+        <tr th:each="ctx_attr : ${application.keySet()}" >
+                <td th:text="${ctx_attr}"></td>
+                <td th:text="${application.get(ctx_attr)}"></td>
+            </tr>
+        </table>
 </body>
 </html>
