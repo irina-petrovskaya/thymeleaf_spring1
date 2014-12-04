@@ -52,11 +52,16 @@ public class MyController {
     @RequestMapping("/test5")
     String test5Mapping(ModelMap model) {
         List<Person> new_persons = new ArrayList<>();
+        List<String> checkins = new ArrayList<>();
+        checkins.add("aaa");
+        //checkins.add("late");
         new_persons.add(new Person("sergey", 37,"Munich"));
         new_persons.add(new Person("yann", 38, "Brussel"));
-
+        Boolean flag = true;
+        model.addAttribute("isAdmin",flag);
         model.addAttribute("users", new_persons);
-
+        model.addAttribute("new_persons", new_persons);
+        model.addAttribute("checkins", checkins);
         return "test5_page";
     }
 }
