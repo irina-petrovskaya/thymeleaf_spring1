@@ -48,4 +48,15 @@ public class MyController {
         mav.addObject("persons", personList);
         return mav;
     }
+
+    @RequestMapping("/test5")
+    String test5Mapping(ModelMap model) {
+        List<Person> new_persons = new ArrayList<>();
+        new_persons.add(new Person("sergey", 37,"Munich"));
+        new_persons.add(new Person("yann", 38, "Brussel"));
+
+        model.addAttribute("new_persons", new_persons);
+
+        return "test5_page";
+    }
 }
