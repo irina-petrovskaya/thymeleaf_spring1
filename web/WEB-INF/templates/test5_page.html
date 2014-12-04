@@ -5,9 +5,10 @@
     <title>test5</title>
 </head>
 <body>
-<!--@thymesVar id="new_persons" type="java.util.List<mytests.thymeleafexamples.spring_thyme.Person>"-->
-<table border="1" th:unless="${#lists.isEmpty(new_persons)}">
-    <tr th:each="p:${new_persons}">
+<h1>model attributes from non-public mapping methods</h1>
+<!--@thymesVar id="users" type="java.util.List<mytests.thymeleafexamples.spring_thyme.Person>"-->
+<table border="1" th:unless="${#lists.isEmpty(users)}">
+    <tr th:each="p:${users}">
         <td th:text="${p.name}"></td>
         <td th:text="${p.age}"></td>
         <td th:text="${p.address}"></td>

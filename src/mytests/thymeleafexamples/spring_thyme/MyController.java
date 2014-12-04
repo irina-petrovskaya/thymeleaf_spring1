@@ -55,7 +55,7 @@ public class MyController {
         new_persons.add(new Person("sergey", 37,"Munich"));
         new_persons.add(new Person("yann", 38, "Brussel"));
 
-        model.addAttribute("new_persons", new_persons);
+        model.addAttribute("users", new_persons);
 
         return "test5_page";
     }
