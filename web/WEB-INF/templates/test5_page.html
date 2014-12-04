@@ -5,6 +5,7 @@
     <title>test5</title>
 </head>
 <body>
+<!--@thymesVar id="new_persons" type="java.util.List<mytests.thymeleafexamples.spring_thyme.Person>"-->
 <table border="1" th:unless="${#lists.isEmpty(new_persons)}">
     <tr th:each="p:${new_persons}">
         <td th:text="${p.name}"></td>
