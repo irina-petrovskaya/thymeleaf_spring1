@@ -36,7 +36,7 @@ public class MyController {
     }
 
     @RequestMapping(value = "/test3")
-    public String test4Mapping( Person person, BindingResult bindingResult){
+    public String test4Mapping( @ModelAttribute Person person, BindingResult bindingResult){
      personList.add(person);
      return "test3_page";
     }
@@ -48,6 +48,7 @@ public class MyController {
         personList.add(new Person("vera", 18, "SPb"));
         personList.add(new Person("andrey", 44, "SPb"));
         mav.addObject("persons", personList);
+        mav.addObject("first_person",personList.get(0));
         return mav;
     }
 

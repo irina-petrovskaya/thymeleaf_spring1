@@ -7,11 +7,12 @@
 <body>
 <table border="1">
     <tr th:each="p:${persons}">
-        <td th:text="${p.name}"></td>
-        <td th:text="${p.age}"></td>
+        <td th:text="${{p.name}}"></td>
+        <td th:text="${#conversions.convert(p.age,'java.lang.String')}"></td>
         <td th:text="${p.address}"></td>
     </tr>
 </table>
-
+<p th:text="${{first_person}}"></p>
+<p th:text="${{persons[persons.size()-1]}}"></p>
 </body>
 </html>
