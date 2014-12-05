@@ -52,6 +52,8 @@ public class MyController {
         return mav;
     }
 
+    /** non-public mapping **/
+
     @RequestMapping("/test5")
     String test5Mapping(ModelMap model) {
         List<Person> new_persons = new ArrayList<>();
