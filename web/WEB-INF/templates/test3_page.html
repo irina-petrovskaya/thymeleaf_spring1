@@ -5,13 +5,6 @@
     <title>test3</title>
 </head>
 <body>
-<!--<table border="1">
-    <tr th:each="p:${persons}">
-        <td th:text="${p.name}"></td>
-        <td th:text="${p.age}"></td>
-        <td th:text="${p.address}"></td>
-    </tr>
-</table>-->
 <div>
       <form action="#" th:action="@{/test3}" th:object="${person}" method="post">
        <input type="text" th:field="*{name}"/>
