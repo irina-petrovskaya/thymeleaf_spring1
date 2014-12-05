@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  */
 
 public class Person {
-    public Person(String address, int age, String name) {
+    public Person(String name, int age, String address) {
         this.address = address;
         this.age = age;
         this.name = name;
