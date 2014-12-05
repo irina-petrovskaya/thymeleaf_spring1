@@ -27,6 +27,7 @@ public class MyController {
     public String test1Mapping(){
         return "test1_page";
     }
+
     @RequestMapping("/test2")
     public String test2Mapping(ModelMap model, HttpSession session){
         session.setAttribute("mysessionattribute1","mysessionattr_value");
@@ -39,6 +40,7 @@ public class MyController {
      personList.add(person);
      return "test3_page";
     }
+
     @RequestMapping("/test4")
     public ModelAndView test3Mapping(){
         ModelAndView mav = new ModelAndView("test4_page");
