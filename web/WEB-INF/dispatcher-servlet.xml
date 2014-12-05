@@ -59,15 +59,16 @@
     <!--  CONVERSION SERVICE                                              -->
     <!--  Standard Spring formatting-enabled implementation               -->
     <!-- **************************************************************** -->
-    <!--<bean id="conversionService"
+    <mvc:annotation-driven conversion-service="conversionService" />
+    <bean id="conversionService"
           class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="formatters">
             <set>
-                <bean class="mytests.thymeleafexamples.spring_thyme.web.conversion.VarietyFormatter" />
-                <bean class="mytests.thymeleafexamples.spring_thyme.web.conversion.DateFormatter" />
+                <bean class="mytests.thymeleafexamples.spring_thyme.web.conversion.PersonFormatter" />
+                <!--<bean class="mytests.thymeleafexamples.spring_thyme.web.conversion.DateFormatter" />-->
             </set>
         </property>
-    </bean>-->
+    </bean>
 
     <!--- Themes -->
     <bean id="themeSource"
