@@ -69,4 +69,22 @@ public class MyController {
         model.addAttribute("checkins", checkins);
         return "test5_page";
     }
+
+    /** test fragments with viewbeans **/
+
+    @RequestMapping("/test6")
+    public String test6_fr1_Mapping(ModelMap model){
+
+        return "test6_page";
+    }
+    @RequestMapping("/test6/fr1")
+    public String test6Mapping(ModelMap model){
+        model.addAttribute("test61","fragment fr1");
+        return "test6_fr1_bean";
+    }
+    @RequestMapping("/test6/fr2")
+    public String test6_fr2_Mapping(ModelMap model){
+        model.addAttribute("test62","fragment fr2");
+        return "test6_fr2_bean";
+    }
 }

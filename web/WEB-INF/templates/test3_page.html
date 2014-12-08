@@ -11,11 +11,14 @@
        <input type="text" th:field="*{age}"/>
        <input type="text" th:field="*{address}"/>
        <button type="submit" name="add" th:text="add"></button>
-   </form>
-  </div>
-  <div>
-  <a th:href="@{/test4}">display all</a>
-  <a th:href="@{/test5}">display new</a>
+          <ul th:if="${#fields.hasErrors('*')}">
+              <li th:each="error: ${#fields.allErrors()}" th:text="${error}"></li>
+          </ul>
+      </form>
+</div>
+<div>
+      <a th:href="@{/test4}">display all</a>
+      <a th:href="@{/test5}">display new</a>
   </div>
 </body>
 </html>
