@@ -70,7 +70,7 @@ public class MyController {
         return "test5_page";
     }
 
-    /** test fragments with viewbeans **/
+    /** test fragments specifying with viewbeans **/
 
     @RequestMapping("/test6")
     public String test6_fr1_Mapping(ModelMap model){
@@ -86,5 +86,18 @@ public class MyController {
     public String test6_fr2_Mapping(ModelMap model){
         model.addAttribute("test62","fragment fr2");
         return "test6_fr2_bean";
+    }
+
+    /** test fragments specifying in controller return value: **/
+
+    @RequestMapping("/test6/fr3")
+    public String test6_fr3_Mapping(ModelMap model){
+        model.addAttribute("test63","fragment fr3");
+        return "test6_page :: fr3";
+    }
+    @RequestMapping("/test6/fr4")
+    public String test6_fr4_Mapping(ModelMap model){
+        model.addAttribute("test64","fragment fr4");
+        return "test6_page :: #fr4";
     }
 }
