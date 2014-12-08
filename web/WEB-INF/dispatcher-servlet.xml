@@ -22,6 +22,8 @@
         <property name="templateEngine" ref="templateEngine"/>
     </bean>
 
+    <!-- ThymeleafView beans for specific template fragments -->
+
     <bean class="org.thymeleaf.spring4.view.ThymeleafView" name="test6_fr1_bean">
         <property name="templateName" value="test6_page"/>
         <property name="fragmentSpec">
