@@ -17,8 +17,9 @@
 <div id="fr2">
     <p th:text="${test62}"></p>
 </div>
-<div th:fragment="fr3">
+<div th:fragment="fr3(arg1)">
     <p th:text="${test63}"></p>
+    <p th:text="${arg1}">no parameters</p>
 </div>
 <div id="fr4">
     <p th:text="${test64}"></p>

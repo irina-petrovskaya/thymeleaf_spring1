@@ -93,7 +93,7 @@ public class MyController {
     @RequestMapping("/test6/fr3")
     public String test6_fr3_Mapping(ModelMap model){
         model.addAttribute("test63","fragment fr3");
-        return "test6_page :: fr3";
+        return "test6_page :: fr3 (arg1='myargument')";
     }
     @RequestMapping("/test6/fr4")
     public String test6_fr4_Mapping(ModelMap model){
