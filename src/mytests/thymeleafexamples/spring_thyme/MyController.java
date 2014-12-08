@@ -58,7 +58,7 @@ public class MyController {
     String test5Mapping(ModelMap model) {
         List<Person> new_persons = new ArrayList<>();
         List<String> checkins = new ArrayList<>();
-        checkins.add("aaa");
+        checkins.add("in time ");
         //checkins.add("late");
         new_persons.add(new Person("sergey", 37,"Munich"));
         new_persons.add(new Person("yann", 38, "Brussel"));
