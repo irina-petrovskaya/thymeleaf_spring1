@@ -36,7 +36,7 @@
         <property name="templateName" value="test6_page"/>
         <property name="fragmentSpec">
             <bean class="org.thymeleaf.standard.fragment.StandardDOMSelectorFragmentSpec">
-                <constructor-arg name="selectorExpression" value="fr2"/>
+                <constructor-arg name="selectorExpression" value="#fr2"/>
             </bean>
         </property>
     </bean>
