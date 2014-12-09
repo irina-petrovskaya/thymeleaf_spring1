@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 /**
  * by Irina.Petrovskaya on 10/3/2014.
  */
-@Component("componentBean1")
-public class ComponentBean1 {
-    @Value("componentBean1 property prop1")
+@Component()
+public class ComponentBean2 {
+    @Value("componentBean2 property prop1")
     public String prop1;
 
-    @Value("componentBean1 property prop2")
+    @Value("componentBean2 property prop2")
     String prop2;
 
     public String getProp2() {

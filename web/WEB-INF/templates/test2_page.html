@@ -10,6 +10,7 @@
     <a href="?theme=second">second</a>
     <p th:text="'*'+${test2_model_attr1}+'*'"></p>
     <p th:text="${@componentBean1.prop1}"></p>
+    <p th:text="${@componentBean2.prop2}"></p>
     <p th:text="${session.mysessionattribute1 }"></p>
     <p th:text="${#themes.code('theme.property1')}"></p>
     <p th:text="'current theme: '+${#httpServletRequest.getParameter('theme')}"></p>
